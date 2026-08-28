@@ -1,10 +1,13 @@
+
+import java.util.List;
+
 // Estudiante.java — clase creada en Semana 2
 public class Estudiante {
 
     // Atributos de instancia (privados - encapsulamiento)
-    private String nombre;
-    private int codigo;
-    private double nota;
+    private final String nombre;
+    private final int codigo;
+    private final double nota;
 
     // Variable STATIC: compartida por todos los objetos
     private static int totalEstudiantes = 0;
@@ -26,6 +29,10 @@ public class Estudiante {
         return nota;
     }
 
+    public int getCodigo() {
+        return codigo;
+    }
+
     // Método static
     public static int getTotalEstudiantes() {
         return totalEstudiantes;
@@ -34,14 +41,16 @@ public class Estudiante {
     // Muestra información del estudiante
     public void mostrarInfo() {
         System.out.println("Estudiante: " + nombre + " | Nota: " + nota);
-
+        System.out.println("Código: " + codigo);
     }
      // separa a 2 alumnos del grupo
-    public static void separarAlumnos(Estudiante e1, Estudiante e2) {
+    public static void separarAlumnos(List<Estudiante> estudiantes) {
 
-        System.out.println("=== Alumno 1 ===");
-        e1.mostrarInfo();
-        System.out.println("=== Alumno 2 ===");
-        e2.mostrarInfo();
+        if (estudiantes != null && estudiantes.size() >= 2) {
+            for (Estudiante estudiante : estudiantes) {
+                System.out.println("========Alumno " + (estudiantes.indexOf(estudiante) + 1) + "============");
+                estudiante.mostrarInfo();
+            }
+        }
     }
 }
