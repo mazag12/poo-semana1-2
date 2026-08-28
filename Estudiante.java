@@ -5,6 +5,7 @@ public class Estudiante {
     private String nombre;
     private int codigo;
     private double nota;
+    private int dni;
  
     // Variable STATIC: compartida por todos los objetos
     private static int totalEstudiantes = 0;
@@ -12,6 +13,7 @@ public class Estudiante {
     // Constructor
     public Estudiante(String nombre, int codigo, double nota) {
         this.nombre = nombre;
+        this.dni = dni;
         this.codigo = codigo;
         this.nota   = nota;
         totalEstudiantes++;   // se incrementa en cada objeto creado
