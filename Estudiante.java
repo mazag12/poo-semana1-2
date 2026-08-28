@@ -11,7 +11,7 @@ public class Estudiante {
     private static int totalEstudiantes = 0;
  
     // Constructor
-    public Estudiante(String nombre, int codigo, double nota) {
+    public Estudiante(String nombre, int codigo, double nota, int dni) {
         this.nombre = nombre;
         this.dni = dni;
         this.codigo = codigo;
@@ -28,7 +28,7 @@ public class Estudiante {
  
     // Muestra información del estudiante
     public void mostrarInfo() {
-        System.out.println("Estudiante: " + nombre + " | Nota: " + nota);
+        System.out.println("Estudiante: " + nombre + " | Nota: " + nota + " | DNI: " + dni );
     }
 }
 
